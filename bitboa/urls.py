@@ -6,6 +6,7 @@ from django.contrib.auth import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", TemplateView.as_view(template_name='home.html'), name="home"),
+    path("accounts/", include('accounts.urls')),
     path("accounts/", include('django.contrib.auth.urls')),
     path("accounts/login/", views.LoginView.as_view(), name="login"),
     path("accounts/logout/", views.LogoutView.as_view(), name="logout"),
@@ -15,6 +16,5 @@ urlpatterns = [
     path("accounts/password_reset/done/", views.PasswordResetDoneView.as_view(), name="password_reset_done"),
     path("accounts/password_reset/<uidb64>/<token>/", views.PasswordResetConfirmView.as_view(), name="password_reset_confirm"),
     path("accounts/password_reset/done/", views.PasswordResetCompleteView.as_view(), name="password_reset_complete"),
-    path("accounts/", include('accounts.urls')),
-
+    
 ]
