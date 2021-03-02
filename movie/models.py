@@ -8,7 +8,7 @@ class MovieModel(models.Model):
   url = models.TextField()
   description = models.TextField(blank=True, null=True)
   message = models.TextField(blank=True, null=True)
-  uploaded_at = models.DateTimeField(auto_now_add=True,)
+  uploaded_at = models.DateTimeField(auto_now_add=True)
   
   def __str__(self):
     return self.title
